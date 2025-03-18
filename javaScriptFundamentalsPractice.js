@@ -64,3 +64,17 @@ console.log(removeDuplicates(numSetB)); // Expected output: [10, 20, 30, 40]
 console.log(
   `-----------------------------------Challenge #4---------------------------------------------`
 );
+
+// Challenge #4: Sum of an Array
+// Write a function that takes an array of numbers and returns the sum of all the elements.
+
+// Example:
+// sumArray([1, 2, 3, 4, 5]); // Output: 15
+
+function sumArray(arr) {
+  return arr.reduce((sum, num) => sum + num, 0);
+}
+
+// Test cases
+console.log(sumArray([1, 2, 3, 4, 5])); // Expected output: 15
+console.log(sumArray([10, 20, 30])); // Expected output: 60
