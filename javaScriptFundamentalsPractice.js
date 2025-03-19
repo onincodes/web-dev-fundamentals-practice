@@ -127,3 +127,25 @@ function fizzBuzz(n) {
 
 // Test case
 fizzBuzz(15);
+
+console.log(
+  `-----------------------------------Challenge #7---------------------------------------------`
+);
+
+// Challenge #7: Count Vowels
+// Write a function that takes a string and returns the number of vowels (a, e, i, o, u) in the string.
+
+// Example:
+// countVowels("hello world"); // Output: 3
+// countVowels("JavaScript is fun"); // Output: 6
+
+function countVowels(str) {
+  return str
+    .toLowerCase()
+    .split("")
+    .filter((char) => "aeiou".includes(char)).length;
+}
+
+// Test cases
+console.log(countVowels("hello world")); // Expected output: 3
+console.log(countVowels("JavaScript is fun")); // Expected output: 6
