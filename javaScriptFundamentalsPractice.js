@@ -78,3 +78,27 @@ function sumArray(arr) {
 // Test cases
 console.log(sumArray([1, 2, 3, 4, 5])); // Expected output: 15
 console.log(sumArray([10, 20, 30])); // Expected output: 60
+
+console.log(
+  `-----------------------------------Challenge #5---------------------------------------------`
+);
+
+// Challenge #5: Find the Longest Word
+// Write a function that takes a sentence (string) and returns the longest word in the sentence.
+// If there are multiple words with the same length, return the first one that appears.
+
+// Example:
+// longestWord("The quick brown fox jumps over the lazy dog"); // Output: "jumps"
+// longestWord("JavaScript is awesome"); // Output: "JavaScript"
+
+function longestWord(sentence) {
+  return sentence
+    .split(" ")
+    .reduce((longest, current) =>
+      current.length > longest.length ? current : longest
+    );
+}
+
+// Test cases
+console.log(longestWord("The quick brown fox jumps over the lazy dog")); // Expected output: "jumps"
+console.log(longestWord("JavaScript is awesome")); // Expected output: "JavaScript"
