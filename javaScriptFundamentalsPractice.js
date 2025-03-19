@@ -149,3 +149,26 @@ function countVowels(str) {
 // Test cases
 console.log(countVowels("hello world")); // Expected output: 3
 console.log(countVowels("JavaScript is fun")); // Expected output: 6
+
+console.log(
+  `-----------------------------------Challenge #8---------------------------------------------`
+);
+
+// Challenge #8: Palindrome Checker
+// Write a function that takes a string and returns `true` if it is a palindrome
+// (reads the same forward and backward), and `false` otherwise. Ignore spaces, punctuation, and case.
+
+// Example:
+// isPalindrome("racecar"); // Output: true
+// isPalindrome("hello"); // Output: false
+// isPalindrome("A man a plan a canal Panama"); // Output: true
+
+function isPalindrome(str) {
+  let cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return cleanedStr === cleanedStr.split("").reverse().join("");
+}
+
+// Test cases
+console.log(isPalindrome("racecar")); // Expected output: true
+console.log(isPalindrome("hello")); // Expected output: false
+console.log(isPalindrome("A man a plan a canal Panama")); // Expected output: true
