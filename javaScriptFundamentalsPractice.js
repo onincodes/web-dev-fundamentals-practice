@@ -172,3 +172,31 @@ function isPalindrome(str) {
 console.log(isPalindrome("racecar")); // Expected output: true
 console.log(isPalindrome("hello")); // Expected output: false
 console.log(isPalindrome("A man a plan a canal Panama")); // Expected output: true
+
+console.log(
+  `-----------------------------------Challenge #9---------------------------------------------`
+);
+
+// Challenge #9: Array Chunking
+// Write a function that takes an array and a chunk size, and splits the array into subarrays,
+// where each subarray is of the given chunk size. The last chunk may contain fewer elements if necessary.
+
+// Example:
+// chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 3);
+// Output: [[1, 2, 3], [4, 5, 6], [7, 8]]
+
+// chunkArray([10, 20, 30, 40, 50], 2);
+// Output: [[10, 20], [30, 40], [50]]
+
+function chunkArray(arr, size) {
+  let result = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
+}
+
+// Test cases
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 3)); // Expected output: [[1, 2, 3], [4, 5, 6], [7, 8]]
+console.log(chunkArray([10, 20, 30, 40, 50], 2)); // Expected output: [[10, 20], [30, 40], [50]]
+console.log(chunkArray([1, 2, 3, 4, 5], 4)); // Expected output: [[1, 2, 3, 4], [5]]
