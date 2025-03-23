@@ -200,3 +200,30 @@ function chunkArray(arr, size) {
 console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 3)); // Expected output: [[1, 2, 3], [4, 5, 6], [7, 8]]
 console.log(chunkArray([10, 20, 30, 40, 50], 2)); // Expected output: [[10, 20], [30, 40], [50]]
 console.log(chunkArray([1, 2, 3, 4, 5], 4)); // Expected output: [[1, 2, 3, 4], [5]]
+
+console.log(
+  `-----------------------------------Challenge #10---------------------------------------------`
+);
+
+// Challenge #10: Find the Second Largest Number
+// Write a function that takes an array of numbers and returns the second largest number.
+// If there is no second largest (array has less than 2 unique numbers), return null.
+
+// Example:
+// secondLargest([10, 20, 30, 40]); // Output: 30
+// secondLargest([5, 5, 5, 5]); // Output: null
+// secondLargest([100, 1, 50, 75, 100]); // Output: 75
+
+function secondLargest(arr) {
+  let uniqueNums = [...new Set(arr)]; // Remove duplicates
+  if (uniqueNums.length < 2) return null; // If not enough unique numbers
+
+  uniqueNums.sort((a, b) => b - a); // Sort in descending order
+  return uniqueNums[1]; // Return second largest
+}
+
+// Test cases
+console.log(secondLargest([10, 20, 30, 40])); // Expected: 30
+console.log(secondLargest([5, 5, 5, 5])); // Expected: null
+console.log(secondLargest([100, 1, 50, 75, 100])); // Expected: 75
+console.log(secondLargest([-1, -5, -3, -10])); // Expected: -3
