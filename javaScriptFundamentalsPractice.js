@@ -227,3 +227,91 @@ console.log(secondLargest([10, 20, 30, 40])); // Expected: 30
 console.log(secondLargest([5, 5, 5, 5])); // Expected: null
 console.log(secondLargest([100, 1, 50, 75, 100])); // Expected: 75
 console.log(secondLargest([-1, -5, -3, -10])); // Expected: -3
+
+console.log(
+  `-----------------------------------Challenge #11---------------------------------------------`
+);
+
+// Challenge #11: Count Unique Characters
+// Write a function that takes a string and returns the number of unique characters in it.
+
+// Example:
+// countUniqueChars("hello"); // Output: 4 (h, e, l, o)
+// countUniqueChars("javascript"); // Output: 9
+
+function countUniqueChars(str) {
+  return new Set(str).size;
+}
+
+// Test cases
+console.log(countUniqueChars("hello")); // Expected output: 4
+console.log(countUniqueChars("javascript")); // Expected output: 9
+console.log(countUniqueChars("aaaa")); // Expected output: 1
+
+console.log(
+  `-----------------------------------Challenge #12---------------------------------------------`
+);
+
+// Challenge #12: Find Missing Number
+// Given an array containing numbers from 1 to N with one missing number, find the missing number.
+
+// Example:
+// findMissingNumber([1, 2, 4, 5]); // Output: 3
+// findMissingNumber([3, 7, 1, 2, 8, 4, 5]); // Output: 6
+
+function findMissingNumber(arr) {
+  let n = arr.length + 1; // The expected length
+  let expectedSum = (n * (n + 1)) / 2; // Sum of first N natural numbers
+  let actualSum = arr.reduce((sum, num) => sum + num, 0);
+  return expectedSum - actualSum;
+}
+
+// Test cases
+console.log(findMissingNumber([1, 2, 4, 5])); // Expected output: 3
+console.log(findMissingNumber([3, 7, 1, 2, 8, 4, 5])); // Expected output: 6
+
+console.log(
+  `-----------------------------------Challenge #13---------------------------------------------`
+);
+
+// Challenge #13: Flatten a Nested Array
+// Write a function that takes a nested array and returns a flat array.
+
+// Example:
+// flattenArray([1, [2, [3, 4], 5], 6]); // Output: [1, 2, 3, 4, 5, 6]
+// flattenArray([[1, 2], [3, 4, [5, 6]]]); // Output: [1, 2, 3, 4, 5, 6]
+
+function flattenArray(arr) {
+  return arr.flat(Infinity);
+}
+
+// Test cases
+console.log(flattenArray([1, [2, [3, 4], 5], 6])); // Expected output: [1, 2, 3, 4, 5, 6]
+console.log(
+  flattenArray([
+    [1, 2],
+    [3, 4, [5, 6]],
+  ])
+); // Expected output: [1, 2, 3, 4, 5, 6]
+
+console.log(
+  `-----------------------------------Challenge #14---------------------------------------------`
+);
+
+// Challenge #14: Anagram Checker
+// Write a function that takes two strings and returns true if they are anagrams of each other.
+
+// Example:
+// isAnagram("listen", "silent"); // Output: true
+// isAnagram("hello", "world"); // Output: false
+
+function isAnagram(str1, str2) {
+  let sortedStr1 = str1.split("").sort().join("");
+  let sortedStr2 = str2.split("").sort().join("");
+  return sortedStr1 === sortedStr2;
+}
+
+// Test cases
+console.log(isAnagram("listen", "silent")); // Expected output: true
+console.log(isAnagram("hello", "world")); // Expected output: false
+console.log(isAnagram("triangle", "integral")); // Expected output: true
