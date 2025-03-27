@@ -274,7 +274,29 @@ console.log(
   `-----------------------------------Challenge #13---------------------------------------------`
 );
 
-// Challenge #13: Flatten a Nested Array
+// Challenge #13: Anagram Checker
+// Write a function that takes two strings and returns true if they are anagrams of each other.
+
+// Example:
+// isAnagram("listen", "silent"); // Output: true
+// isAnagram("hello", "world"); // Output: false
+
+function isAnagram(str1, str2) {
+  let sortedStr1 = str1.split("").sort().join("");
+  let sortedStr2 = str2.split("").sort().join("");
+  return sortedStr1 === sortedStr2;
+}
+
+// Test cases
+console.log(isAnagram("listen", "silent")); // Expected output: true
+console.log(isAnagram("hello", "world")); // Expected output: false
+console.log(isAnagram("triangle", "integral")); // Expected output: true
+
+console.log(
+  `-----------------------------------Challenge #14---------------------------------------------`
+);
+
+// Challenge #14: Flatten a Nested Array
 // Write a function that takes a nested array and returns a flat array.
 
 // Example:
@@ -293,25 +315,3 @@ console.log(
     [3, 4, [5, 6]],
   ])
 ); // Expected output: [1, 2, 3, 4, 5, 6]
-
-console.log(
-  `-----------------------------------Challenge #14---------------------------------------------`
-);
-
-// Challenge #14: Anagram Checker
-// Write a function that takes two strings and returns true if they are anagrams of each other.
-
-// Example:
-// isAnagram("listen", "silent"); // Output: true
-// isAnagram("hello", "world"); // Output: false
-
-function isAnagram(str1, str2) {
-  let sortedStr1 = str1.split("").sort().join("");
-  let sortedStr2 = str2.split("").sort().join("");
-  return sortedStr1 === sortedStr2;
-}
-
-// Test cases
-console.log(isAnagram("listen", "silent")); // Expected output: true
-console.log(isAnagram("hello", "world")); // Expected output: false
-console.log(isAnagram("triangle", "integral")); // Expected output: true
